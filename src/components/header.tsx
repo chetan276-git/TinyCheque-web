@@ -20,7 +20,8 @@ const Header = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Individual refs (stable across renders)
+  const closeMenu = () => setIsMobileMenuOpen(false); // ✅ Added this line
+
   const termsRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -113,17 +114,17 @@ const Header = () => {
     {
       key: 'services',
       label: 'Services',
-      href: '/services',
+      href: '/',
     },
     {
       key: 'blog',
       label: 'Blog',
-      href: '/blog',
+      href: '/',
     },
     {
       key: 'tools',
       label: 'Tools',
-      href: '/tools',
+      href: '/',
     },
     {
       key: 'products',
@@ -332,8 +333,9 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && <MobileNavLinks navItems={mobileNavItems} />}
+        {isMobileMenuOpen && (
+          <MobileNavLinks navItems={mobileNavItems} closeMenu={closeMenu} />
+        )}
       </div>
     </header>
   );

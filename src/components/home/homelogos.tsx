@@ -40,7 +40,7 @@ const Homelogos = () => {
   ];
 
   return (
-    <section className='bg-[#F5F5F4]'>
+    <section className='bg-[#F5F5F4] !py-6 md:py-16'>
       <div className='container'>
         <div className='bg-white rounded-3xl w-full shadow-md p-6 my-8'>
           <div className='container mx-auto'>

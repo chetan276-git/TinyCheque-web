@@ -11,11 +11,15 @@ interface MobileNavItem {
 
 interface MobileNavLinksProps {
   navItems: MobileNavItem[];
+  closeMenu: () => void;
 }
 
-const MobileNavLinks: React.FC<MobileNavLinksProps> = ({ navItems }) => {
+const MobileNavLinks: React.FC<MobileNavLinksProps> = ({
+  navItems,
+  closeMenu,
+}) => {
   return (
-    <div className='lg:hidden mt-4 py-2 w-full bg-white shadow-md rounded-b-md absolute left-0 right-0 '>
+    <div className='lg:hidden mt-4 py-2 w-full bg-white shadow-md rounded-b-md absolute left-0 right-0'>
       {navItems.map((nav, index) => (
         <div
           key={nav.key}
@@ -26,6 +30,7 @@ const MobileNavLinks: React.FC<MobileNavLinksProps> = ({ navItems }) => {
           <Link
             href={nav.href}
             className='block text-[#351C24] font-normal text-base'
+            onClick={closeMenu}
           >
             {nav.label}
           </Link>

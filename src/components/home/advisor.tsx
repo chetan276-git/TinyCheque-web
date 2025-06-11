@@ -79,7 +79,7 @@ const Advisor = () => {
           </div>
         </div>
 
-        <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:px-4 mt-12'>
+        <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:px-4 mt-8 md:mt-12'>
           {mentors.map((mentor, index) => (
             <motion.div
               key={index}

@@ -139,7 +139,7 @@ const WhyChoose = () => {
         </div>
 
         <motion.div
-          className='flex justify-center items-center mt-12 max-w-2/4 mx-auto'
+          className='flex justify-center items-center mt-4 md:mt-12 md:max-w-2/4 mx-auto'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

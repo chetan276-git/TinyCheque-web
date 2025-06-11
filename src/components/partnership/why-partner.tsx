@@ -55,7 +55,7 @@ const WhyPartner = () => {
           </h2>
         </motion.div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 md:mt-12 mb-4'>
           {features.map((feature, index) => (
             <motion.div
               key={index}

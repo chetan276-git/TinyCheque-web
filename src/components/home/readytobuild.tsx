@@ -51,7 +51,7 @@ const ReadyToBuild: React.FC<ReadyToBuildProps> = ({
           )}
 
           <motion.div
-            className='flex flex-col sm:flex-row justify-center max-w-2/4 space-y-4 sm:space-y-0 sm:space-x-4 mx-auto'
+            className='flex flex-col sm:flex-row justify-center md:max-w-2/4 space-y-4 sm:space-y-0 sm:space-x-4 mx-auto'
             initial='hidden'
             animate='visible'
             variants={fadeInUp}

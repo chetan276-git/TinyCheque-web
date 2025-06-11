@@ -14,13 +14,15 @@ const fadeUp = {
 
 const PartnershipModal = () => {
   return (
-    <section className='bg-[#FBFBFB]'>
+    <section className='bg-[#FBFBFB] !py-6 md:!py-16'>
       <div className='container'>
         <div className='relative flex flex-col items-center pt-16 pb-16 gap-6'>
+          {/* Title Section */}
           <motion.div
             className='max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8'
             initial='hidden'
-            animate='visible'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
           >
             <div className='flex flex-col gap-2 sm:gap-2 items-center text-center'>
@@ -37,13 +39,15 @@ const PartnershipModal = () => {
             </div>
           </motion.div>
 
+          {/* Paragraph Boxes */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mb-4'>
             {[...Array(2)].map((_, i) => (
               <motion.div
                 key={i}
                 className='bg-white rounded-3xl shadow-md flex items-start justify-center px-8 py-6'
                 initial='hidden'
-                animate='visible'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.2 }}
                 variants={{
                   hidden: { opacity: 0, y: 40 },
                   visible: {
