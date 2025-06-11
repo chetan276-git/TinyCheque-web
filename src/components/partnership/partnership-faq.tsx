@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Accordion from '../accordion';
-
+import { motion } from 'framer-motion';
 const faqs = [
   {
     question: 'What kind of SaaS companies does TinyCheque partner with?',
@@ -29,9 +29,19 @@ const faqs = [
 const PartnershipFAQ = () => {
   return (
     <>
-      <section className='bg-[#F5F5F4]'>
+      <motion.section
+        className='bg-[#F5F5F4]'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className='container'>
-          <div className='flex flex-col gap-2 sm:gap-2 items-center text-center'>
+          <motion.div
+            className='flex flex-col gap-2 sm:gap-2 items-center text-center'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
             <p className='text-[#864A5B] text-base sm:text-lg font-normal'>
               Key part of a knowledge base
             </p>
@@ -50,10 +60,16 @@ const PartnershipFAQ = () => {
                 <span className='pl-1'>Contact us!</span>
               </Link>
             </p>
-          </div>
-          <Accordion items={faqs} />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <Accordion items={faqs} />
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

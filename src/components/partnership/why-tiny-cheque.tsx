@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const WhyTinyCheque = () => {
   interface Comparison {
@@ -44,10 +46,28 @@ const WhyTinyCheque = () => {
     },
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.6,
+      },
+    }),
+  };
+
   return (
     <section className='bg-[#FBFBFB]'>
       <div className='container'>
-        <div className='flex flex-col gap-2 sm:gap-2 items-center text-center'>
+        <motion.div
+          className='flex flex-col gap-2 sm:gap-2 items-center text-center'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
           <p className='text-[#864A5B] text-base sm:text-lg font-normal'>
             (You vs. Competitors)
           </p>
@@ -55,7 +75,6 @@ const WhyTinyCheque = () => {
             Why TinyCheque
           </h2>
           <h2 className='text-2xl sm:text-3xl md:text-4xl font-light text-[#351C24]'>
-            {' '}
             Is Your Best Co-Founder
           </h2>
           <p className='text-[#864A5B] text-sm sm:text-base md:text-lg font-normal mt-2 sm:mt-2 max-w-prose'>
@@ -63,11 +82,17 @@ const WhyTinyCheque = () => {
             similar software based on critical parameters like features,
             pricing, ratings, etc
           </p>
-        </div>
-        <div className='bg-white rounded-3xl shadow-lg overflow-hidden p-2 mt-8 mb-2 w-full max-w-full overflow-x-auto'>
+        </motion.div>
+
+        <motion.div
+          className='bg-white rounded-3xl shadow-lg overflow-hidden p-2 mt-8 mb-2 w-full max-w-full overflow-x-auto'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
           {/* Desktop */}
           <div className='hidden sm:block'>
-            {/* Header */}
             <div className='grid grid-cols-3 bg-white font-semibold text-base md:text-lg lg:text-xl'>
               <div className='p-3 border-b border-[#e2e7f0] sm:border-r'>
                 Factors
@@ -79,28 +104,27 @@ const WhyTinyCheque = () => {
                 Traditional Method
               </div>
             </div>
-            {/* Rows */}
             {comparisons.map(
               ({ features, tinyChequePartnership, method }, idx) => (
-                <div
+                <motion.div
                   key={idx}
                   className='grid grid-cols-3 border-b border-[#e2e7f0] [&:last-child]:border-none [&>div:not(:last-child)]:border-r [&>div:not(:last-child)]:border-r-[#e2e7f0]'
+                  custom={idx + 1}
+                  variants={fadeUp}
                 >
-                  <div className='p-3 border-r text-sm md:text-base border-[#e2e7f0]'>
-                    {features}
-                  </div>
+                  <div className='p-3 text-sm md:text-base'>{features}</div>
                   {[tinyChequePartnership, method].map(
                     ({ text, positive }, i) => (
                       <div
                         key={i}
-                        className='p-3 flex items-center text-sm md:text-base '
+                        className='p-3 flex items-center text-sm md:text-base'
                       >
                         {positive ? <CheckIcon /> : <XIcon />}
                         {text}
                       </div>
                     )
                   )}
-                </div>
+                </motion.div>
               )
             )}
           </div>
@@ -109,7 +133,15 @@ const WhyTinyCheque = () => {
           <div className='block sm:hidden divide-y divide-[#e2e7f0]'>
             {comparisons.map(
               ({ features, tinyChequePartnership, method }, idx) => (
-                <div key={idx} className='py-4 first:pt-2 last:pb-2'>
+                <motion.div
+                  key={idx}
+                  className='py-4 first:pt-2 last:pb-2'
+                  custom={idx + 1}
+                  variants={fadeUp}
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{ once: true }}
+                >
                   <div className='font-semibold text-base mb-3 text-[#351C24]'>
                     {features}
                   </div>
@@ -133,11 +165,11 @@ const WhyTinyCheque = () => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </motion.div>
               )
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -145,6 +177,7 @@ const WhyTinyCheque = () => {
 
 export default WhyTinyCheque;
 
+// Icons remain unchanged
 const CheckIcon = () => (
   <svg
     className='w-4 h-4 md:w-5 md:h-5 mr-2 text-blue-500 flex-shrink-0'
