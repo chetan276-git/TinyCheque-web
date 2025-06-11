@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { AngleArrowDown } from './icons/angle-arrow-down';
 import { SupportIcon } from './icons/support';
 import { ContactIcon } from './icons/contact-icon';
+import ServicesDropdown from './services-dropdown';
+import MobileNavLinks from './mobile-nav-links';
 
 const Header = () => {
   const [dropdowns, setDropdowns] = useState({
@@ -15,6 +17,8 @@ const Header = () => {
     products: false,
     resources: false,
   });
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Individual refs (stable across renders)
   const termsRef = useRef<HTMLDivElement>(null);
@@ -52,6 +56,7 @@ const Header = () => {
           products: false,
           resources: false,
         });
+        setIsMobileMenuOpen(false);
       }
     };
 
@@ -104,8 +109,41 @@ const Header = () => {
     },
   ];
 
+  const mobileNavItems = [
+    {
+      key: 'services',
+      label: 'Services',
+      href: '/services',
+    },
+    {
+      key: 'blog',
+      label: 'Blog',
+      href: '/blog',
+    },
+    {
+      key: 'tools',
+      label: 'Tools',
+      href: '/tools',
+    },
+    {
+      key: 'products',
+      label: 'Products',
+      href: '/products',
+    },
+    {
+      key: 'partnership',
+      label: 'Partnership',
+      href: '/partnership',
+    },
+    {
+      key: 'investors',
+      label: 'Investors',
+      href: '/investors',
+    },
+  ];
+
   return (
-    <header className='bg-white shadow-sm'>
+    <header className='bg-white shadow-sm relative z-50'>
       <div className='container mx-auto max-w-6xl px-4 py-4'>
         {/* Top Bar */}
         <div className='flex justify-between items-center text-sm text-[#864A5B] mb-4'>
@@ -126,7 +164,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className='hidden md:flex space-x-4 relative'>
+          <div className='hidden md:flex space-x-4'>
             <div className='relative' ref={termsRef}>
               <button
                 onClick={() => toggleDropdown('terms')}
@@ -192,18 +230,24 @@ const Header = () => {
                 <AngleArrowDown />
               </button>
               {dropdowns.company && (
-                <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
                   <Link
                     href='/about'
-                    className='block px-6 py-2 text-sm text-[#864A5B] font-medium hover:bg-gray-100'
+                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
                   >
                     About Us
                   </Link>
                   <Link
-                    href='/careers'
-                    className='block px-6 py-2 text-sm text-[#864A5B] font-medium hover:bg-gray-100'
+                    href='/'
+                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
                   >
-                    Careers
+                    Our Story
+                  </Link>
+                  <Link
+                    href='/'
+                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
+                  >
+                    Why Choose Us
                   </Link>
                 </div>
               )}
@@ -226,7 +270,6 @@ const Header = () => {
           <nav className='hidden lg:flex items-center space-x-6 text-[#864A5B] font-semibold'>
             {navItems.map((nav) => (
               <div
-                className='relative'
                 key={nav.key}
                 ref={stableRefs[nav.key as keyof typeof stableRefs]}
               >
@@ -238,26 +281,39 @@ const Header = () => {
                 >
                   {nav.label} {nav.links && <AngleArrowDown />}
                 </button>
-                {dropdowns[nav.key as keyof typeof dropdowns] && nav.links && (
-                  <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
-                    {nav.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className='block px-6 py-2 text-sm text-[#864A5B] hover:bg-gray-100'
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
+
+                {nav.key === 'services' && dropdowns.services && (
+                  <div className='hidden lg:block'>
+                    <ServicesDropdown
+                      onClose={() => toggleDropdown('services')}
+                    />
                   </div>
                 )}
+
+                <div className='relative'>
+                  {nav.key !== 'services' &&
+                    dropdowns[nav.key as keyof typeof dropdowns] &&
+                    nav.links && (
+                      <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                        {nav.links.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className='block px-6 py-2 text-sm text-[#864A5B] hover:bg-gray-100'
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                </div>
               </div>
             ))}
           </nav>
 
           {/* Mobile Hamburger */}
           <div className='lg:hidden'>
-            <button>
+            <button onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
               <svg
                 className='w-6 h-6 text-[#864A5B]'
                 fill='none'
@@ -274,6 +330,10 @@ const Header = () => {
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && <MobileNavLinks navItems={mobileNavItems} />}
       </div>
     </header>
   );
