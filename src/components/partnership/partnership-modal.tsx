@@ -20,8 +20,7 @@ const PartnershipModal = () => {
           <motion.div
             className='max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8'
             initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.3 }}
+            animate='visible'
             variants={fadeUp}
           >
             <div className='flex flex-col gap-2 sm:gap-2 items-center text-center'>
@@ -44,14 +43,17 @@ const PartnershipModal = () => {
                 key={i}
                 className='bg-white rounded-3xl shadow-md flex items-start justify-center px-8 py-6'
                 initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.3 }}
+                animate='visible'
                 variants={{
-                  ...fadeUp,
-                  transition: {
-                    delay: 0.2 + i * 0.2,
-                    duration: 0.6,
-                    ease: 'easeOut',
+                  hidden: { opacity: 0, y: 40 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: 0.2 + i * 0.2,
+                      duration: 0.6,
+                      ease: 'easeOut',
+                    },
                   },
                 }}
               >
