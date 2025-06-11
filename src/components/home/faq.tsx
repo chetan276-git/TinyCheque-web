@@ -80,6 +80,7 @@ const FAQ = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
+          className='mt-8 md:mt-0'
         >
           <Accordion items={faqs} />
         </motion.div>

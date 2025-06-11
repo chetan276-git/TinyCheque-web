@@ -91,7 +91,7 @@ const TransformationSection = () => {
           </h2>
         </motion.div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:mt-4 mt-12'>
           {stepsData.map((step, index) => (
             <motion.div
               key={step.id}

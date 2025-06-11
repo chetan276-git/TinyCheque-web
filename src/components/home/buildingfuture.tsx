@@ -108,7 +108,7 @@ const BuildingFuture = () => {
 
             {/* Card List */}
             <div className='flex-grow overflow-hidden' ref={scrollRef}>
-              <div className='flex transition-all duration-300 ease-in-out'>
+              <div className='flex transition-all duration-300 ease-in-out pt-5 md:pt-0'>
                 {cards.map((card, idx) => (
                   <motion.div
                     key={idx}
@@ -179,7 +179,7 @@ const BuildingFuture = () => {
               <Link
                 href={cards[activeIndex].link}
                 rel='noopener noreferrer'
-                className='w-full !h-[240px] md:h-[500px] block overflow-hidden p-3 md:p-6 bg-[#d4b1bb] rounded-lg md:rounded-3xl'
+                className='w-full h-[240px] md:h-[500px] block overflow-hidden p-3 md:p-6 bg-[#d4b1bb] rounded-lg md:rounded-3xl'
               >
                 <div className='w-full h-full relative rounded-lg md:rounded-2xl flex items-center justify-center overflow-hidden aspect-[0.5]'>
                   <Image
