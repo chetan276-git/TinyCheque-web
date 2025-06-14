@@ -10,6 +10,23 @@ import ServicesDropdown from './services-dropdown';
 import MobileNavLinks from './mobile-nav-links';
 
 const Header = () => {
+  const [showFixedTopBar, setShowFixedTopBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowFixedTopBar(true);
+      } else {
+        setShowFixedTopBar(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const [dropdowns, setDropdowns] = useState({
     terms: false,
     company: false,
@@ -20,7 +37,7 @@ const Header = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const closeMenu = () => setIsMobileMenuOpen(false); // ✅ Added this line
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   const termsRef = useRef<HTMLDivElement>(null);
   const companyRef = useRef<HTMLDivElement>(null);
@@ -147,115 +164,136 @@ const Header = () => {
     <header className='bg-white shadow-sm relative z-50'>
       <div className='container mx-auto max-w-6xl px-4 py-4'>
         {/* Top Bar */}
-        <div className='flex justify-between items-center text-sm text-[#864A5B] mb-4'>
-          <div className='flex space-x-4'>
-            <Link
-              href='mailto:hello@company.com'
-              className='font-medium flex items-center gap-2 cursor-pointer'
-            >
-              <SupportIcon />
-              Customer Support
-            </Link>
-            <Link
-              href='mailto:sales@company.com'
-              className='font-medium flex items-center gap-2 cursor-pointer'
-            >
-              <ContactIcon />
-              Contact Sales
-            </Link>
-          </div>
+        <div
+          className={`w-full bg-white transition-all duration-300 z-50  mb-4 ${
+            showFixedTopBar
+              ? 'fixed top-0 left-0 right-0 w-full flex items-center py-4'
+              : ''
+          }`}
+        >
+          <div className='container'>
+            <div className='flex justify-between items-center text-sm text-[#864A5B]'>
+              <div className='flex space-x-4'>
+                <Link
+                  href='mailto:hello@company.com'
+                  className='font-medium flex items-center gap-2 cursor-pointer'
+                >
+                  <SupportIcon />
+                  Customer Support
+                </Link>
+                <Link
+                  href='mailto:sales@company.com'
+                  className='font-medium flex items-center gap-2 cursor-pointer'
+                >
+                  <ContactIcon />
+                  Contact Sales
+                </Link>
+              </div>
 
-          <div className='hidden md:flex space-x-4'>
-            <div className='relative' ref={termsRef}>
-              <button
-                onClick={() => toggleDropdown('terms')}
-                className='font-semibold flex items-center cursor-pointer'
-              >
-                Terms & Policy
-                <AngleArrowDown />
-              </button>
-              {dropdowns.terms && (
-                <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
-                  <Link
-                    href='/terms'
-                    className='block px-6 py-2 text-sm font-medium text-[#864A5B] hover:bg-gray-100'
+              <div className='hidden md:flex space-x-4'>
+                <div className='relative' ref={termsRef}>
+                  <button
+                    onClick={() => toggleDropdown('terms')}
+                    className='font-semibold flex items-center cursor-pointer'
                   >
-                    Terms of Use
-                  </Link>
+                    Terms & Policy
+                    <span
+                      className={`inline-flex transform transition-transform duration-300 origin-center ${
+                        dropdowns.terms ? 'rotate-180' : ''
+                      }`}
+                    >
+                      <AngleArrowDown />
+                    </span>
+                  </button>
+                  {dropdowns.terms && (
+                    <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                      <Link
+                        href='/terms'
+                        className='block px-6 py-2 text-sm font-semibold text-[#864A5B] hover:bg-gray-100'
+                      >
+                        Terms of Use
+                      </Link>
+                      <Link
+                        href='/privacy-policy'
+                        className='block px-6 py-2 text-sm font-semibold text-[#864A5B] hover:bg-gray-100'
+                      >
+                        Privacy Policy
+                      </Link>
+                      <Link
+                        href='/cookies'
+                        className='block px-6 py-2 text-sm font-semibold text-[#864A5B] hover:bg-gray-100'
+                      >
+                        Cookies
+                      </Link>
+                      <Link
+                        href='/refund'
+                        className='block px-6 py-2 text-sm font-semibold text-[#864A5B] hover:bg-gray-100'
+                      >
+                        Refund
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <div className='relative' ref={companyRef}>
                   <Link
-                    href='/privacy-policy'
-                    className='block px-6 py-2 text-sm font-medium text-[#864A5B] hover:bg-gray-100'
+                    href='/partnership'
+                    className='font-semibold flex items-center cursor-pointer'
                   >
-                    Privacy Policy
-                  </Link>
-                  <Link
-                    href='/cookies'
-                    className='block px-6 py-2 text-sm font-medium text-[#864A5B] hover:bg-gray-100'
-                  >
-                    Cookies
-                  </Link>
-                  <Link
-                    href='/refund'
-                    className='block px-6 py-2 text-sm font-medium text-[#864A5B] hover:bg-gray-100'
-                  >
-                    Refund
+                    Partnership
                   </Link>
                 </div>
-              )}
-            </div>
 
-            <div className='relative' ref={companyRef}>
-              <Link
-                href='/partnership'
-                className='font-semibold flex items-center cursor-pointer'
-              >
-                Partnership
-              </Link>
-            </div>
-
-            <div className='relative'>
-              <Link
-                href='/investors'
-                className='font-semibold flex items-center cursor-pointer'
-              >
-                Investors
-              </Link>
-            </div>
-
-            <div className='relative' ref={companyRef}>
-              <button
-                onClick={() => toggleDropdown('company')}
-                className='font-semibold flex items-center cursor-pointer'
-              >
-                Company
-                <AngleArrowDown />
-              </button>
-              {dropdowns.company && (
-                <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                <div className='relative'>
                   <Link
-                    href='/about'
-                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
+                    href='/investors'
+                    className='font-semibold flex items-center cursor-pointer'
                   >
-                    About Us
-                  </Link>
-                  <Link
-                    href='/'
-                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
-                  >
-                    Our Story
-                  </Link>
-                  <Link
-                    href='/'
-                    className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
-                  >
-                    Why Choose Us
+                    Investors
                   </Link>
                 </div>
-              )}
+
+                <div className='relative' ref={companyRef}>
+                  <button
+                    onClick={() => toggleDropdown('company')}
+                    className='font-semibold flex items-center cursor-pointer'
+                  >
+                    Company
+                    <span
+                      className={`inline-flex transform transition-transform duration-300 origin-center ${
+                        dropdowns.company ? 'rotate-180' : ''
+                      }`}
+                    >
+                      <AngleArrowDown />
+                    </span>
+                  </button>
+                  {dropdowns.company && (
+                    <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                      <Link
+                        href='/about'
+                        className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
+                      >
+                        About Us
+                      </Link>
+                      <Link
+                        href='/'
+                        className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
+                      >
+                        Our Story
+                      </Link>
+                      <Link
+                        href='/'
+                        className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
+                      >
+                        Why Choose Us
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
         {/* Logo and Nav */}
         <div className='flex justify-between md:justify-start gap-10 items-center'>
           <Link href='/' className='flex-shrink-0'>
@@ -280,7 +318,21 @@ const Header = () => {
                   }
                   className='flex items-center gap-1 cursor-pointer'
                 >
-                  {nav.label} {nav.links && <AngleArrowDown />}
+                  <span className='text-[#864A5B] font-semibold flex items-center'>
+                    {' '}
+                    {nav.label}
+                  </span>
+                  {nav.links && (
+                    <span
+                      className={`inline-flex transform transition-transform duration-300 origin-center ${
+                        dropdowns[nav.key as keyof typeof dropdowns]
+                          ? 'rotate-180'
+                          : ''
+                      }`}
+                    >
+                      <AngleArrowDown />
+                    </span>
+                  )}
                 </button>
 
                 {nav.key === 'services' && dropdowns.services && (
@@ -295,7 +347,7 @@ const Header = () => {
                   {nav.key !== 'services' &&
                     dropdowns[nav.key as keyof typeof dropdowns] &&
                     nav.links && (
-                      <div className='absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
+                      <div className='absolute top-full left-0 mt-2 w-auto bg-white shadow-md rounded-md z-20'>
                         {nav.links.map((link) => (
                           <Link
                             key={link.href}
