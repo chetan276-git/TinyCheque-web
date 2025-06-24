@@ -270,19 +270,19 @@ const Header = () => {
                   {dropdowns.company && (
                     <div className='absolute top-full right-0 mt-2 w-48 bg-white shadow-md rounded-md z-20'>
                       <Link
-                        href='/about-us'
+                        href='/company/about-us'
                         className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
                       >
                         About Us
                       </Link>
                       <Link
-                        href='/our-story'
+                        href='/company/our-story'
                         className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
                       >
                         Our Story
                       </Link>
                       <Link
-                        href='/why-us'
+                        href='/company/why-us'
                         className='block px-6 py-2 text-sm text-[#864A5B] font-semibold hover:bg-gray-100'
                       >
                         Why Choose Us

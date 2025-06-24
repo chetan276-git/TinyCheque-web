@@ -81,7 +81,6 @@ const AdvisorsInfoCards = () => {
                 fill
                 className='rounded-md object-cover'
                 sizes='96px'
-                loading='lazy'
                 priority={index === 0}
               />
             </div>

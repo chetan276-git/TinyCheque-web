@@ -9,7 +9,28 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const NiyamSolution = () => {
+type ListItem = {
+  title: string;
+  description: string;
+};
+
+type WhySolutionProductProps = {
+  topLabel?: string;
+  heading?: string;
+  subheading?: string;
+  listTitle?: string;
+  listItems: ListItem[];
+  imageSrc: string;
+};
+
+const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
+  topLabel,
+  heading,
+  subheading,
+  listTitle,
+  listItems,
+  imageSrc,
+}) => {
   return (
     <section>
       <div className='container'>
@@ -20,58 +41,44 @@ const NiyamSolution = () => {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <div className='flex flex-col gap-2 sm:gap-2 items-center text-center'>
+          <div className='flex flex-col gap-2 items-center text-center'>
             <p className='text-[#864A5B] text-base sm:text-lg font-normal'>
-              Solution
+              {topLabel}
             </p>
             <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-[#351C24]'>
-              Why Niyam.ai Is the
+              {heading}
             </h2>
             <h2 className='text-2xl sm:text-3xl md:text-4xl font-light text-[#351C24]'>
-              Preferred Legal Tech Solution
+              {subheading}
             </h2>
           </div>
         </motion.div>
 
         <motion.div
-          className='bg-white rounded-2xl overflow-hidden shadow-lg mt-6 mb-4'
+          className='bg-white w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg mt-6 mb-4'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <div className='p-6 md:p-8 md:flex'>
+          <div className='p-6 md:p-8 md:flex items-center'>
             <div className='md:flex-1 md:pr-8'>
               <p className='text-[#864A5B] font-base text-lg mb-4'>
-                Why Legal Professionals Trust Niyam.ai
+                {listTitle}
               </p>
               <ul className='list-disc list-inside text-gray-600 space-y-2'>
-                <li>
-                  <span className='font-semibold'>Powered by GenAI:</span>
-                  <span className='text-[#864A5B]'>
-                    {' '}
-                    Niyam.ai is built on cutting-edge Generative AI technology,
-                    ensuring that every legal output — whether it's a contract,
-                    research report, or compliance checklist — is precise,
-                    efficient and tailored to your needs.
-                  </span>
-                </li>
-                <li>
-                  <span className='font-semibold'>
-                    Tailored for Every Legal Professional:
-                  </span>{' '}
-                  <span className='text-[#864A5B]'>
-                    Whether you’re an individual, law firm or a large
-                    enterprise, Niyam.ai offers customizable workflows and
-                    templates to suit your specific legal requirements.
-                  </span>
-                </li>
+                {listItems.map((item, index) => (
+                  <li key={index}>
+                    <span className='font-semibold'>{item.title}</span>
+                    <span className='text-[#864A5B]'> {item.description}</span>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className='mt-6 md:mt-0 md:flex-1 rounded-lg'>
               <Image
-                src='/images/products/niyan-solution.jpg'
-                alt='AI robot holding scales of justice'
+                src={imageSrc}
+                alt='Solution Image'
                 width={600}
                 height={400}
                 loading='lazy'
@@ -85,4 +92,4 @@ const NiyamSolution = () => {
   );
 };
 
-export default NiyamSolution;
+export default WhySolutionProduct;

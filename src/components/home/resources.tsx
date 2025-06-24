@@ -100,7 +100,6 @@ const Resources = () => {
                     alt={post.alt}
                     fill
                     className='rounded-md'
-                    loading='lazy'
                     priority={index === 0}
                   />
                 </div>

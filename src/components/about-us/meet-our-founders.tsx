@@ -72,7 +72,6 @@ const MeetOurFounders = () => {
                   alt={member.alt}
                   fill
                   className='object-cover rounded-2xl'
-                  loading='lazy'
                   priority={index === 0}
                 />
               </div>
