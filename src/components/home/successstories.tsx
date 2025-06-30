@@ -5,9 +5,15 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const SuccesSstories = () => {
+interface SuccesSstoriesProps {
+  bgColor?: string;
+}
+
+const SuccesSstories: React.FC<SuccesSstoriesProps> = ({
+  bgColor = '#FBFBFB',
+}) => {
   return (
-    <section className='bg-[#FBFBFB]'>
+    <section className={`bg-${bgColor}`}>
       <div className='container'>
         {/* Header Section */}
         <motion.div
@@ -155,6 +161,7 @@ const SuccesSstories = () => {
                 layout='fill'
                 objectFit='cover'
                 priority={false}
+                loading='lazy'
                 quality={50}
               />
             </motion.div>

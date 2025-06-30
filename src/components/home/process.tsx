@@ -88,6 +88,7 @@ const HomeProcessSection = () => {
                     src={`/images/icons/${currEle.icon}`}
                     fill
                     alt={currEle.title}
+                    loading='lazy'
                     className='object-contain'
                   />
                 </div>

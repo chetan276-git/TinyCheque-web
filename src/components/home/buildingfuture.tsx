@@ -135,6 +135,7 @@ const BuildingFuture = () => {
                         className='w-8 rounded-3xl mb-3'
                         width={20}
                         height={20}
+                        loading='lazy'
                       />
                       <h5 className='text-[#864A5B] text-sm sm:text-base font-semibold'>
                         {card.title}
@@ -187,6 +188,7 @@ const BuildingFuture = () => {
                     alt={cards[activeIndex].title}
                     className='w-full h-full rounded-2xl object-cover'
                     layout='fill'
+                    loading='lazy'
                   />
                 </div>
               </Link>

@@ -51,6 +51,7 @@ const CaseStudySection = () => {
                   src='/images/icons/eraser.svg'
                   width={35}
                   height={35}
+                  loading='lazy'
                   alt='Icon'
                 />
               </div>
@@ -79,6 +80,7 @@ const CaseStudySection = () => {
                     width={35}
                     height={35}
                     alt='Icon'
+                    loading='lazy'
                   />
                 </div>
                 <h2 className='text-lg font-bold'>The Partnership</h2>
@@ -109,6 +111,7 @@ const CaseStudySection = () => {
                     width={35}
                     height={35}
                     alt='Icon'
+                    loading='lazy'
                   />
                 </div>
                 <h2 className='text-lg font-bold'>The Outcome</h2>

@@ -106,6 +106,7 @@ const GrowthSection = () => {
                   priority={false}
                   quality={80}
                   fill
+                  loading='lazy'
                   objectFit='contain'
                 />
               </div>

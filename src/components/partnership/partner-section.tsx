@@ -66,6 +66,7 @@ const PartnerSection = () => {
                 fill
                 className='object-contain scale-110'
                 alt='About Image'
+                loading='lazy'
               />
             </div>
           </motion.div>
