@@ -71,7 +71,7 @@ const FableShortsCom = () => {
         title='Fableshorts: Fully Automated Video Creation & Publishing'
         subtitle='Smarter Content. Zero Hassle. All in Minutes.'
         description='Ever feel like you’re stuck on the content treadmill — spinning your wheels but getting nowhere? We did too. That’s why we built Fableshorts — your all-in-one, automated video creation engine. From idea to scroll-stopping social video in literal minutes, Fableshorts harnesses GenAI to take video marketing completely off your plate — and onto your audience’s feeds.'
-        imageSrc='/images/products/qcall-banner.jpg'
+        imageSrc='/images/products/fabel-short-banner.jpg'
         buttons={[
           {
             label: 'Get Started for free',

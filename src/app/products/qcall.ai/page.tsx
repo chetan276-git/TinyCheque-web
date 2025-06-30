@@ -173,8 +173,6 @@ const QcallAI = () => {
         titleLeft='Why QCall.ai'
         titleRight='Outperforms Other Call Automation Tools'
         description='Software comparison is the process of deeply analyzing multiple similar software based on critical parameters like features, pricing, ratings, etc'
-        button='Get Started for free'
-        buttonLink='https://app.autoposting.ai/'
         comparisonData={[
           {
             feature: 'AI-Powered Call Generation',
@@ -194,6 +192,7 @@ const QcallAI = () => {
         ]}
       />
       <FAQ
+        subtitle='Key part of a knowledge base'
         titleMain='Frequently asked questions'
         description={`Below you'll find answers to the most common questions you may have on . If you still can't find the answer you're looking for, just`}
         faqs={[

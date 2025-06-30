@@ -58,12 +58,12 @@ const featuresData = [
   {
     title: 'Compliance Built in',
     description:
-      "Stay compliant with local and international regulations with Niyam.ai's built-in legal intelligence...",
+      "Stay compliant with local and international regulations with Niyam.ai's built-in-legal intelligence. It constantly monitors changes in law, ensuring that every document and recommendation adheres to the latest legal standards.",
   },
   {
     title: 'Time-Saving Automation',
     description:
-      'Manual legal work can be tedious and error-prone. Niyam.ai automates tasks like contract generation...',
+      'Manual legal work can be tedious and error-prone, Niyam.ai automates tasks like contract generation, legal research and compliance checks freeing up time for higher-level strategic work.',
   },
 ];
 
@@ -77,8 +77,9 @@ const NiyamAI = () => {
         imageSrc='/images/products/niyam-banner.png'
       />
       <WhatProducts
-        titleBold={'What is Niyam.ai'}
-        titleLight={'The Future of LegalTech Is Here'}
+        subtitle='What is Niyam.ai'
+        titleBold={'The Future of LegalTech Is Here'}
+        titleLight={'Simplify Your Legal Work with Niyam.ai'}
         description={
           'Niyam.ai is a GenAI-powered legal technology platform that transforms how legal professionals,MSMes, corporates, and individuals manage their legal processes.Niyam.ai provides accurate, efficient, and customizable solutions. With the power of Generative AI, it produces high-impact content while ensuring full compliance with local and international regulations. Niyam.ai adapts to your unique legal requirements, saving time, reducing human error, and enhancing productivity.'
         }
@@ -97,57 +98,64 @@ const NiyamAI = () => {
         steps={ProductProcessSteps}
       />
       <ProductsCaseStudy
-        heading='How LegalTech Simplified Operations'
-        subheading='For a Global Compliance Firm'
+        heading='How Niyam.ai Transformed'
+        subheading={`A Law Firm's Workflow`}
         caseStudy={{
           problem: {
             icon: '/images/icons/eraser.svg',
-            title: 'The Challenge',
-            description:
-              'The firm faced delays in research and regulatory interpretation across multiple regions.',
+            title: 'The Problem',
+            description: `A mid-sized firm struggled with long document drafting times and inefficient legal research, which limited the firm's abiity to take on more cases. The firm also faced challenges keeping up with chaning regulations, leading to compliance risks for their clinets.`,
           },
           solution: {
             icon: '/images/icons/receipt-search.svg',
             title: 'The Solution',
-            description:
-              'We implemented automation pipelines with AI-based legal monitoring and a smart knowledge base.',
+            description: `Niyam.ai was implemented to automate the firm's document drafting and legal researc. By using customizable templates and AI-poweres insights, the firm was able to streamline operations while ensuring that all socuments met compliance standards.`,
           },
           outcome: {
             icon: '/images/icons/tick-circle.svg',
-            title: 'The Results',
+            title: 'The Outcome',
             points: [
-              '30% faster case resolution across teams.',
-              'Real-time updates on compliance law changes.',
-              'Increased client satisfaction by 40%.',
+              'Document drafting time reduced by 50%, allowing lawyers to focus on higher-level casework.',
+              'Legal research efficiency improved by 40%, providing deeper insights into cases while reducing manual efforts.',
+              'Compliance risks reduced by 30%, thanks to real-time monitoring and automated compliance checks.',
             ],
           },
         }}
       />
       <KeyFeaturesProducts
-        heading='Why Choose LegalGen?'
-        subheading='Smart Automation for Legal Teams'
+        subheading='Partner with TinyCheque'
+        heading='Key Features of Autoposting.ai'
         features={[
           {
-            title: 'AI-Powered Contracts',
-            description:
-              'Draft contracts 3x faster with automated legal templates.',
+            title: 'AI-Powered Document Drafting',
+            description: `Generate high-qulity legal documents with Niyam.ai's GenAI model, saying hours on manual drafting. Our AI ensures every document is clear, accurate and fully compliant with legal standards.`,
           },
           {
-            title: 'Smart Compliance Alerts',
+            title: 'Comprehensive Legal Research',
             description:
-              'Stay on top of changing regulations with real-time alerts.',
+              'Cut through the noise of traditional research methods wit AI-driven research tools that pull relevant legal precedants, statues, and case laws tailored to your case or business nedd.',
           },
           {
-            title: 'Seamless CRM Integration',
+            title: 'Compliance Monitoring & Smart Alerts',
             description:
-              'Connect your legal operations with Salesforce, HubSpot & more.',
+              'Stay compliant wit up-to-date regulatory frameworks. Niyam.ai automatically checks your documents for compliance, ensuring adherence to the latest legal requirements. Our platform notifies you of any changes in the law that ay affect your business.',
+          },
+          {
+            title: 'Customizable Legal Templates',
+            description:
+              'Tinycheque has built and scaled AI-first Saas products across multiple industries. Our proven frameworks, cmobined with our deep networks of contacts, make us the ideal partner for companies looking to grow quickly and strategically.',
+          },
+          {
+            title: 'Seamless Integration',
+            description:
+              'Niyam.ai integrates with your existing workflow tools- whether its a CRM, case management system, or dicument repositoy - making it easy ti adopt without disrupting your operations.',
           },
         ]}
       />
       <WhySolutionProduct
         topLabel='Solution'
-        heading='Why LexAI is the'
-        subheading='Go-To Platform for Legal Tech'
+        heading='Why Niyam.ai Is the'
+        subheading='Preferred Legal Tech Solution'
         listTitle='Why Legal Professionals TRustNiyam.ai'
         imageSrc='/images/products/legal-intelligence.jpg'
         listItems={[

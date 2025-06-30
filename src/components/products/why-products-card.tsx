@@ -15,6 +15,7 @@ type ListItem = {
 };
 
 type WhySolutionProductProps = {
+  bgColor?: string;
   topLabel?: string;
   heading?: string;
   subheading?: string;
@@ -24,6 +25,7 @@ type WhySolutionProductProps = {
 };
 
 const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
+  bgColor,
   topLabel,
   heading,
   subheading,
@@ -32,7 +34,7 @@ const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
   imageSrc,
 }) => {
   return (
-    <section>
+    <section className={`bg-[${bgColor}]`}>
       <div className='container'>
         <motion.div
           className='w-full px-4 sm:px-6 lg:px-8'
@@ -55,7 +57,7 @@ const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
         </motion.div>
 
         <motion.div
-          className='bg-white w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg mt-6 mb-4'
+          className='bg-white w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg mt-6 md:mt-10 mb-4'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}

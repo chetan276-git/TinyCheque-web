@@ -4,11 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface Feature {
-  title: string;
+  title?: string;
   description: string;
 }
 
 interface GameChangerProductsProps {
+  bgColor?: string;
   heading?: string;
   subheading?: string;
   tagline?: string;
@@ -16,13 +17,14 @@ interface GameChangerProductsProps {
 }
 
 const GameChangerProducts: React.FC<GameChangerProductsProps> = ({
+  bgColor,
   heading,
   subheading,
   tagline,
   features,
 }) => {
   return (
-    <section>
+    <section className={`bg-[${bgColor}]`}>
       <div className='container'>
         <div className='w-full px-4 sm:px-6 lg:px-8'>
           <motion.div
@@ -54,9 +56,11 @@ const GameChangerProducts: React.FC<GameChangerProductsProps> = ({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className='bg-white rounded-3xl shadow-md py-6 px-8 flex flex-col'
             >
-              <h3 className='text-xl font-semibold text-[#351C24] mb-2'>
-                {feature.title}
-              </h3>
+              {feature.title && (
+                <h3 className='text-xl font-semibold text-[#351C24] mb-2'>
+                  {feature.title}
+                </h3>
+              )}
               <p className='text-md text-[#864A5B] font-normal'>
                 {feature.description}
               </p>

@@ -11,6 +11,7 @@ interface FAQItem {
 }
 
 interface FAQProps {
+  bgColor?: string;
   subtitle?: string;
   titleMain: string;
   titleSub?: string;
@@ -20,6 +21,7 @@ interface FAQProps {
 }
 
 const FAQ: React.FC<FAQProps> = ({
+  bgColor = '#F5F5F4',
   subtitle,
   titleMain,
   titleSub,
@@ -29,7 +31,7 @@ const FAQ: React.FC<FAQProps> = ({
 }) => {
   return (
     <motion.section
-      className='bg-[#F5F5F4]'
+      className={`bg-${bgColor}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

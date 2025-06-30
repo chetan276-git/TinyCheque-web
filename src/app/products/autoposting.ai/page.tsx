@@ -89,7 +89,8 @@ const AutoPostingAI = () => {
         ]}
       />
       <WhatProducts
-        titleBold={'What is Autoposting.ai'}
+        subtitle='What is Autoposting.ai'
+        titleBold={'The Future of Content Automation Is Here'}
         titleLight={'Simplify Your Content Strategy with Autoposting.ai'}
         description={
           'Autoposting.ai is a GenAI-powered content automation platform that transforms how marketers, creators, startups, and businesses manage their digital presence. Built to streamline workflows like post scheduling, cross-platform publishing, and engagement optimization, Autoposting.ai delivers smart, efficient, and customizable solutions. With the power of Generative AI, it creates high-impact content and automates delivery—so you can stay consistent and visible, effortlessly.'
@@ -136,7 +137,7 @@ const AutoPostingAI = () => {
       />
       <KeyFeaturesProducts
         heading='Key Features of Autoposting.ai'
-        subheading=''
+        subheading='Partner with TinyCheque'
         features={[
           {
             title: 'AI-Powered Content Creation',
@@ -165,6 +166,7 @@ const AutoPostingAI = () => {
         ]}
       />
       <WhySolutionProduct
+        bgColor='#F5F5F4'
         topLabel='Solution'
         heading='Why Autoposting.ai Is the'
         subheading='Preferred Content Automation Platform'
@@ -183,6 +185,7 @@ const AutoPostingAI = () => {
         ]}
       />
       <CompetitorsProductsList
+        bgColor='#FBFBFB'
         subtitle='You vs. Competitors'
         titleLeft='Why Autoposting.ai'
         titleRight='Outperforms Other Tools'
@@ -214,6 +217,7 @@ const AutoPostingAI = () => {
         ]}
       />
       <FAQ
+        subtitle='Key part of a knowledge base'
         titleMain='Frequently asked questions'
         description={`Below you'll find answers to the most common questions you may have on . If you still can't find the answer you're looking for, just`}
         faqs={[

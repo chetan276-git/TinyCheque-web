@@ -10,6 +10,7 @@ interface ComparisonItem {
 }
 
 interface CompetitorsProductsListProps {
+  bgColor?: string;
   subtitle?: string;
   titleLeft: string;
   titleRight: string;
@@ -29,6 +30,7 @@ const fadeUp = {
 };
 
 const CompetitorsProductsList: React.FC<CompetitorsProductsListProps> = ({
+  bgColor = '#FBFBFB',
   subtitle,
   titleLeft,
   titleRight,
@@ -38,7 +40,7 @@ const CompetitorsProductsList: React.FC<CompetitorsProductsListProps> = ({
   buttonLink = '#',
 }) => {
   return (
-    <section className='bg-[#FBFBFB]'>
+    <section className={`bg-[${bgColor}]`}>
       <div className='container '>
         <div className='w-full px-4 sm:px-6 lg:px-8'>
           <motion.div
@@ -94,14 +96,8 @@ const CompetitorsProductsList: React.FC<CompetitorsProductsListProps> = ({
                   {item.feature}
                 </div>
                 <div className='p-2 md:p-3 border-r border-[#e2e7f0] flex items-center text-sm md:text-base'>
-                  {item.left === 'Yes' ? (
-                    <>
-                      <CheckIcon />
-                      <span>Yes</span>
-                    </>
-                  ) : (
-                    <span className='text-[#351C24]'>{item.left}</span>
-                  )}
+                  <CheckIcon />
+                  <span>Yes</span>
                 </div>
                 <div className='p-2 md:p-3 flex items-center text-sm md:text-base'>
                   <XIcon />

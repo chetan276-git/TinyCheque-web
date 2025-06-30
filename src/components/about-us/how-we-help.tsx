@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { EyeIcon } from '../icons/eye-icon';
+import { DevelopmentIcon } from '../icons/development-icon';
+import { StrategiesIcon } from '../icons/strategies-icon';
 
 const HowWeHelp = () => {
   const steps = [
@@ -9,51 +12,21 @@ const HowWeHelp = () => {
       title: 'Share Your Vision',
       description:
         "We work with you to understand your business challenges, goals, and vision. Whether you're an entrepreneur with a big idea or a business looking to enhance your SaaS product, we begin by listening.",
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='49'
-          height='48'
-          viewBox='0 0 49 48'
-          fill='none'
-        >
-          {/* path code omitted for brevity */}
-        </svg>
-      ),
+      icon: <EyeIcon />,
     },
     {
       step: 'Step 2',
       title: 'Build with Experts',
       description:
         'Our team of AI and SaaS experts collaborates closely with you to design and develop a product that is both innovative and practical. From AI-driven user insights to secure backend architecture, we handle the technical complexities, so you can focus on strategy.',
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='49'
-          height='48'
-          viewBox='0 0 49 48'
-          fill='none'
-        >
-          {/* path code omitted for brevity */}
-        </svg>
-      ),
+      icon: <DevelopmentIcon />,
     },
     {
       step: 'Step 3',
       title: 'Scale and Succeed',
       description:
         "TinyCheque is not just a product builder—we're a scaling partner. With our extensive market experience and AI expertise, we ensure your SaaS product is not just functional but positioned to grow, reach new markets, and maximize profitability.",
-      icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='49'
-          height='48'
-          viewBox='0 0 49 48'
-          fill='none'
-        >
-          {/* path code omitted for brevity */}
-        </svg>
-      ),
+      icon: <StrategiesIcon />,
     },
   ];
 
