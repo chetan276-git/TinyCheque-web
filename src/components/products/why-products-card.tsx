@@ -25,7 +25,7 @@ type WhySolutionProductProps = {
 };
 
 const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
-  bgColor,
+  bgColor = '#FFF5F7',
   topLabel,
   heading,
   subheading,
@@ -34,10 +34,10 @@ const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
   imageSrc,
 }) => {
   return (
-    <section className={`bg-[${bgColor}]`}>
-      <div className='container'>
+    <section style={{ backgroundColor: bgColor }}>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
-          className='w-full px-4 sm:px-6 lg:px-8'
+          className='w-full'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
@@ -57,14 +57,14 @@ const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
         </motion.div>
 
         <motion.div
-          className='bg-white w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg mt-6 md:mt-10 mb-4'
+          className='bg-white max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg mt-6 md:mt-10 mb-4'
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <div className='p-6 md:p-8 md:flex items-center'>
-            <div className='md:flex-1 md:pr-8'>
+          <div className='p-6 md:p-8 flex flex-col md:flex-row items-center gap-6'>
+            <div className='md:w-1/2'>
               <p className='text-[#864A5B] font-base text-lg mb-4'>
                 {listTitle}
               </p>
@@ -77,14 +77,14 @@ const WhySolutionProduct: React.FC<WhySolutionProductProps> = ({
                 ))}
               </ul>
             </div>
-            <div className='mt-6 md:mt-0 md:flex-1 rounded-lg'>
+            <div className='md:w-1/2'>
               <Image
                 src={imageSrc}
                 alt='Solution Image'
                 width={600}
                 height={400}
                 loading='lazy'
-                className='w-full h-auto rounded-lg'
+                className='w-full h-auto rounded-lg object-cover'
               />
             </div>
           </div>
