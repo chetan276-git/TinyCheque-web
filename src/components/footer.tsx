@@ -88,6 +88,15 @@ const Footer = () => {
             <h3 className='font-base text-sm mb-4 text-[#CE9EA6]'>Company</h3>
             <ul className='space-y-2 text-[#EEDDDF] font-medium text-md'>
               <li>
+                <Link href='/company/about-us'>About</Link>
+              </li>
+              <li>
+                <Link href='/company/our-story'> Our Story</Link>
+              </li>
+              <li>
+                <Link href='/company/why-us'>Why Choose Us</Link>
+              </li>
+              <li>
                 <Link href='/company/about'>About</Link>
               </li>
               <li>
