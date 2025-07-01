@@ -8,6 +8,14 @@ interface ReadyToBuildProps {
   title: string;
   subtitle?: string;
   bgColor?: string;
+  primaryButton?: {
+    text: string;
+    href: string;
+  };
+  secondaryButton?: {
+    text: string;
+    href: string;
+  };
 }
 
 const fadeInUp = {
@@ -23,9 +31,11 @@ const ReadyToBuild: React.FC<ReadyToBuildProps> = ({
   title,
   subtitle,
   bgColor = '#F5F5F4',
+  primaryButton,
+  secondaryButton,
 }) => {
   return (
-    <section className={`bg-[${bgColor}]`}>
+    <section style={{ backgroundColor: bgColor }}>
       <div className='container'>
         <div className='w-full space-y-6 md:space-y-8 text-center'>
           <motion.h1
@@ -50,23 +60,24 @@ const ReadyToBuild: React.FC<ReadyToBuildProps> = ({
             </motion.p>
           )}
 
-          <motion.div
-            className='flex flex-col sm:flex-row justify-center md:max-w-2/4 space-y-4 sm:space-y-0 sm:space-x-4 mx-auto'
-            initial='hidden'
-            animate='visible'
-            variants={fadeInUp}
-            custom={2}
-          >
-            <Button href='https://forms.tinycheque.com/jv'>
-              Partner with us
-            </Button>
-            <Button
-              href='https://cal.com/team/tinycheque/15'
-              variant='secondary'
+          {(primaryButton || secondaryButton) && (
+            <motion.div
+              className='flex flex-col sm:flex-row justify-center md:max-w-2/4 space-y-4 sm:space-y-0 sm:space-x-4 mx-auto'
+              initial='hidden'
+              animate='visible'
+              variants={fadeInUp}
+              custom={2}
             >
-              Schedule a Consultation
-            </Button>
-          </motion.div>
+              {primaryButton && (
+                <Button href={primaryButton.href}>{primaryButton.text}</Button>
+              )}
+              {secondaryButton && (
+                <Button href={secondaryButton.href} variant='secondary'>
+                  {secondaryButton.text}
+                </Button>
+              )}
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

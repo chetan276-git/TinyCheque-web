@@ -1,8 +1,9 @@
 'use client';
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Button from '../button';
+import VideoBanner from '../video-banner';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,8 +15,6 @@ const fadeUp = {
 };
 
 const HomeBanner = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   return (
     <div className='pt-12 md:p-12 md:pt-24 bg-[#F5F5F4]'>
       <div className='container'>
@@ -61,19 +60,7 @@ const HomeBanner = () => {
             initial='hidden'
             animate='visible'
           >
-            <video
-              ref={videoRef}
-              className='w-full aspect-video object-cover rounded-xl shadow-xl'
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload='none'
-              poster='/banner-poster.jpg'
-            >
-              <source src='/video/intro-video.mp4' type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
+            <VideoBanner />
           </motion.div>
         </div>
       </div>
@@ -96,6 +83,7 @@ const HomeBanner = () => {
                 alt='Logos Brand Img'
                 fill
                 className='object-contain'
+                loading='lazy'
               />
             </div>
           </div>

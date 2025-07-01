@@ -34,3 +34,44 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 📁 Project Structure
+
+TinyCheque/
+├── .next/ # Next.js build output (auto-generated)
+├── node_modules/ # Project dependencies
+├── public/ # Public assets
+│ ├── images/ # Image assets
+│ ├── video/ # Video files (SVGs for animations)
+│ ├── file.svg
+│ ├── globe.svg
+│ ├── next.svg
+│ ├── vercel.svg
+│ └── window.svg
+├── src/ # Main source code
+│ ├── app/ # App directory (Next.js App Router)
+│ │ ├── cookies/ # Route: /cookies
+│ │ ├── home/ # Route: /home
+│ │ ├── partnership/ # Route: /partnership
+│ │ ├── privacy-policy/ # Route: /privacy-policy
+│ │ ├── refund/ # Route: /refund
+│ │ ├── terms/ # Route: /terms
+│ │ ├── favicon.ico # Site favicon
+│ │ ├── globals.css # Global CSS styles
+│ │ ├── layout.tsx # Root layout (applies to all pages)
+│ │ └── page.tsx # Homepage (route: `/`)
+│ └── components/ # Reusable components
+│ ├── home/ # Components specific to the home page
+│ ├── icons/ # Custom icons
+│ ├── partnership/ # Components related to partnership page
+│ ├── accordion.tsx # Accordion UI component
+│ ├── button.tsx # Button component
+│ ├── footer.tsx # Footer section
+│ ├── header.tsx # Header/Nav component
+│ ├── loader.tsx # Loading spinner or loader
+│ ├── mobile-nav-links.tsx # Mobile nav links menu
+│ ├── PageTransitionLoader.tsx # Page transition animation loader
+│ └── services-dropdown.tsx # Dropdown for services
+├── .gitignore # Git ignored files
+├── eslint.config.mjs # ESLint configuration
+├── next.config.js # Next.js configuration
