@@ -146,7 +146,12 @@ const Header = () => {
     {
       key: 'products',
       label: 'Products',
-      href: '/products',
+      links: [
+        { href: '/products/niyam.ai', label: 'Niyam.ai' },
+        { href: '/products/autoposting.ai', label: 'Autoposting.ai' },
+        { href: '/products/qcall.ai', label: 'Qcall' },
+        { href: '/products/fableshorts.com', label: 'Fable Shorts' },
+      ],
     },
     {
       key: 'partnership',
