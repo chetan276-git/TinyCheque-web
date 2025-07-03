@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 
 const BusinessModel = () => {
   return (
-    <section className='bg-[#FBFBFB] !pt-0'>
+    <section className='bg-[#FBFBFB] pt-0 overflow-x-hidden'>
       <div className='container'>
-        <div className=' flex flex-col lg:flex-row-reverse gap-4 lg:gap-10 items-center'>
+        <div className='flex flex-col lg:flex-row-reverse gap-6 lg:gap-10 items-center'>
           {/* Image Block Animation */}
           <motion.div
             className='flex-1'
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
@@ -30,13 +30,13 @@ const BusinessModel = () => {
           {/* Text Block Animation */}
           <motion.div
             className='flex-1 space-y-6'
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
             <div className='space-y-4'>
-              <h2 className='text-xl md:text-2xl lg:text-2xl font-bold text-[#351C24]'>
+              <h2 className='text-xl md:text-2xl font-bold text-[#351C24]'>
                 A Dual Business Model That Drives Innovation and Scalability
               </h2>
               <p className='text-[#864A5B]'>
