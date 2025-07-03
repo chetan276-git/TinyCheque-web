@@ -24,7 +24,7 @@ const fadeRight = {
 
 const MassiveGlobal = () => {
   return (
-    <div className='container py-24'>
+    <div className='container pb-0 md:py-24'>
       {/* Section 1: Massive Market Need */}
       <div className='flex flex-col lg:flex-row-reverse gap-4 lg:gap-10 items-center'>
         {/* Text */}
