@@ -38,7 +38,7 @@ const InvestInTinycheque = () => {
               <motion.div className='pr-0 md:pr-20 lg:pr-40' variants={fadeUp}>
                 <h3 className='text-lg md:text-xl font-normal text-[#864A5B]'>
                   At TinyCheque, we are not just participating in the AI-SaaS
-                  revolution - we are leading it. As India `&lsquo;`s first
+                  revolution - we are leading it. As India &lsquo;s first
                   AI-First SaaS Venture Studio, we are on a mission to build and
                   co-create the next generation of AI-driven software that
                   addresses the most pressing challenges across industries.
@@ -67,7 +67,7 @@ const InvestInTinycheque = () => {
               <VideoBanner />
             </motion.div>
           </div>
-          <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 mb-4'>
+          <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 md:mt-20 mb-4'>
             <div className='bg-white  rounded-3xl shadow-md flex items-start justify-center px-8 py-6'>
               <p className='text-sm font-normal sm:text-base text-[#864A5B]'>
                 With a proven track record, a network of elite investors, and an
@@ -79,8 +79,8 @@ const InvestInTinycheque = () => {
             <div className='bg-white  rounded-3xl shadow-md flex items-start justify-center px-8 py-6'>
               <p className='text-sm font-normal sm:text-base text-[#864A5B]'>
                 For investors seeking high-growth opportunities in the
-                world`&lsquo;`s fastest-growing tech sector, TinyCheque offers
-                an unparalleled value proposition. This is your chance to join a
+                world&lsquo;s fastest-growing tech sector, TinyCheque offers an
+                unparalleled value proposition. This is your chance to join a
                 transformative venture at the heart of AI and SaaS innovation.
               </p>
             </div>

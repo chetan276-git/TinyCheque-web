@@ -97,9 +97,6 @@ const Footer = () => {
                 <Link href='/company/why-us'>Why Choose Us</Link>
               </li>
               <li>
-                <Link href='/company/about'>About</Link>
-              </li>
-              <li>
                 <Link href='/blog'>Blogs</Link>
               </li>
             </ul>

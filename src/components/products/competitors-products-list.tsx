@@ -118,22 +118,14 @@ const CompetitorsProductsList: React.FC<CompetitorsProductsListProps> = ({
                   <div className='flex flex-col items-start'>
                     <div className='text-gray-500 mb-1'>{titleLeft}</div>
                     <div className='flex items-center'>
-                      {item.left === 'Yes' ? (
-                        <>
-                          <CheckIcon />
-                          <span className='text-[#351C24]'>Yes</span>
-                        </>
-                      ) : (
-                        <span className='text-[#351C24]'>{item.left}</span>
-                      )}
+                      <CheckIcon />
+                      <span className='text-[#351C24]'>{item.left}</span>
                     </div>
                   </div>
                   <div className='flex flex-col items-start'>
                     <div className='text-gray-500 mb-1'>{titleRight}</div>
                     <div className='flex items-center'>
-                      {(item.right === 'Yes' || item.right === 'No') && (
-                        <XIcon />
-                      )}
+                      <XIcon />
                       <span className='text-[#351C24]'>{item.right}</span>
                     </div>
                   </div>

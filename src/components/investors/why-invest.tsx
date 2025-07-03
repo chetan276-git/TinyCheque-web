@@ -63,7 +63,7 @@ const WhyInvest = () => {
             Why Invest in TinyCheque?
           </h2>
           <p className='text-xl text-gray-600'>
-            India`&lsquo;`s first AI-First SaaS Venture Studio
+            India&lsquo;s first AI-First SaaS Venture Studio
           </p>
         </div>
         <div className='mt-8 max-w-6xl container'>
@@ -115,14 +115,16 @@ const WhyInvest = () => {
                 viewport={{ once: true }}
                 className='flex flex-col md:flex-row md:items-center justify-between bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow'
               >
-                <div className='text-3xl md:text-3xl font-bold text-gray-900 mb-2 pl-6 md:mb-0 md:w-1/3'>
+                <div className='text-2xl md:text-3xl font-bold text-gray-900 mb-2 pl-6 md:mb-0 md:w-1/3'>
                   {item.figure}
                 </div>
-                <div className='text-sm text-gray-600 md:w-2/3 pl-4'>
-                  <div className='font-medium text-xl text-[#864A5B]'>
+                <div className='text-sm text-gray-600 md:w-2/3 pl-2 md:lpl-4'>
+                  <div className='font-medium text-md md:text-xl text-[#864A5B]'>
                     {item.title}
                   </div>
-                  <div className='text-[#864A5B] text-xl'>{item.subtitle}</div>
+                  <div className='text-[#864A5B] text-md md:text-xl'>
+                    {item.subtitle}
+                  </div>
                 </div>
               </motion.div>
             ))}
