@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
     x: 0,
@@ -14,7 +14,7 @@ const fadeLeft = {
 };
 
 const fadeRight = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 20 },
   visible: {
     opacity: 1,
     x: 0,
@@ -24,9 +24,9 @@ const fadeRight = {
 
 const MassiveGlobal = () => {
   return (
-    <div className='container pb-0 md:py-24'>
+    <div className='container overflow-x-hidden pb-0 pt-12 md:py-24'>
       {/* Section 1: Massive Market Need */}
-      <div className='flex flex-col lg:flex-row-reverse gap-4 lg:gap-10 items-center'>
+      <div className='flex flex-col lg:flex-row-reverse gap-6 lg:gap-10 items-center'>
         {/* Text */}
         <motion.div
           className='flex-1 space-y-6'
@@ -36,7 +36,7 @@ const MassiveGlobal = () => {
           viewport={{ once: true }}
         >
           <div className='space-y-4'>
-            <h2 className='text-xl md:text-2xl lg:text-2xl font-bold text-[#351C24]'>
+            <h2 className='text-xl md:text-2xl font-bold text-[#351C24]'>
               Addressing a Massive Market Need with AI-First Solutions
             </h2>
             <p className='text-[#864A5B]'>
@@ -87,7 +87,7 @@ const MassiveGlobal = () => {
       </div>
 
       {/* Section 2: Global VCs */}
-      <div className='flex flex-col lg:flex-row gap-4 lg:gap-10 items-center mt-16 md:mt-24'>
+      <div className='flex flex-col lg:flex-row gap-6 lg:gap-10 items-center mt-16 md:mt-24'>
         {/* Text */}
         <motion.div
           className='flex-1 space-y-6'
@@ -97,7 +97,7 @@ const MassiveGlobal = () => {
           viewport={{ once: true }}
         >
           <div className='space-y-4'>
-            <h2 className='text-xl md:text-2xl lg:text-2xl font-bold text-[#351C24]'>
+            <h2 className='text-xl md:text-2xl font-bold text-[#351C24]'>
               Global VCs Are Betting Big on AI-SaaS
             </h2>
             <p className='text-[#864A5B]'>
